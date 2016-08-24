@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/nav.css">
+
+		<!-- JavaScript -->
+		<script src="js/jackQuery.js"></script>
+		<script src="js/editor.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<ul class="navbar">
+				<li class="dropdown">
+					<span class="btn">File</span>
+					<ul class="content tog">
+						<li><input type="button" value="bold" onclick="formatText('b');" /></li>
+    					<li><input type="button" value="italic" onclick="formatText('i');" /></li>
+    					<li><input type="button" value="underline" onclick="formatText('u');" /></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<span class="btn">Format</span>
+					<ul class="content tog">
+						<li>Thing 1</li>
+						<li>Thing 2</li>
+						<li>Thing 3</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<span class="btn">Other</span>
+					<ul class="content tog">
+						<li>Thing 1</li>
+						<li>Thing 2</li>
+						<li>Thing 3</li>
+					</ul>
+				</li>
+				<li class="dropdown" style="float: right;">
+					<span class="btn" onclick="$('#settings').toggle();">Settings</span>
+					<ul  id="settings" class="content" style="display: none;">
+						<li><label>Colour: </label><input type="color" id="color-var" value="#EE4400" onchange="$v('--main-color').set($('#color-var').value()); console.log($('#color-var').value());"></li>
+						<li>Thing 2</li>
+						<li>Thing 3</li>
+					</ul>
+				</li>
+			</ul>
+			<p class="editor" contenteditable>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<modal>
+			<div id="settings-modal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close" onclick="$('#settings-modal').hide();">×</span>
+						<h2>Settings</h2>
+					</div>
+					<div class="modal-body">
+						<p>
+							<label>Colour:</label><input type="color" id="color-var" value="#EE4400" onchange="$v('--main-color').set($('#color-var').value());">
+						</p>
+					</div>
+					<div class="modal-footer">
+						<h3>Modal Footer</h3>
+					</div>
+				</div>
+
+			</div>
+		</modal>
+
+		<script type="text/javascript">
+			$v('--main-color').set($('#color-var').value());
+		</script>
+	</body>
+</html>

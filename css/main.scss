@@ -1,0 +1,29 @@
+:root {
+  --main-color:none;
+}
+
+body {
+	font-family: "Menlo";
+}
+
+.wrapper {
+	padding: 5vw;
+	padding-bottom: 0;
+}
+
+.editor {
+	height: 80vh;
+	font-family: "Times";
+}
+
+
+* {
+	z-indexwebkit-print-color-adjust: exact;
+}
+
+@media screen and (min-width: 914px) {
+	body {
+		width: 854px;
+		margin:0 auto;
+	}
+}
